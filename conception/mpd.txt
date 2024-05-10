@@ -1,0 +1,12 @@
+vol(int _id int primary key , ville depart varchar (30),destination varchar(30),date_depat date , date_retour date , nbr_passager int , comp_aeri varchar(30),prix float, duree int );
+
+
+siege (ids int primary key , nums int , etat boolean , id_vol int foreign_key references vol(id_vol);
+
+
+utilisateur(id_utilisateur int primary key , nom varchar(30),prenom varchar(30), num_carte int , gmail varchar(30) , date_expiration int , cvv int , code_postal int );
+
+passager(id_passager int primary key , nom varchar(30), prenom varchar(30), age int , tele varchar(30))
+
+Reservation (id_resev int primary key , date_reserv date , id_utilisateur int foreign key references utilisateur(id_utilisateur) , id_passager int foreign key refernces  passager (idp) , id_siege int foreign key refernces siege (id_siege));
+
